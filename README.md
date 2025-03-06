@@ -100,3 +100,20 @@ const handleSubmit = async (event) => {
     if (isValidForm()) {
       //API Call
   };
+
+
+## Checkbox checked when includes
+### input type checkbox in map
+
+{sideLockData.map((sport, index) => (
+                  <li key={sport._id} className="add_mche_card">
+                    <input
+                      id={`check_${sport._id}`}
+                      type="checkbox"
+                      checked={lockData
+                        .map((lc) => lc.eventId)
+                        .includes(sport._id)}
+                      onChange={() => addDelSplortLock(sport._id, sport.name)}
+                      value={sport._id}
+                      className="form-check-input"
+                    />
